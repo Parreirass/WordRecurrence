@@ -45,7 +45,16 @@ Logo em seguida, uma estrutura é apresentada no código, chamada `unordered_map
 - `unordered_map` é uma classe da biblioteca padrão do C++ que implementa uma estrutura de dados de tabela hash. Ela funciona como um armazenamento associativo e é utilizada para alocar pares chave-valor, onde cada chave é única e mapeia para um único valor. Essa estrutura se diferencia de um `map` na característica de que a primeira não ordena os elementos, diferentemente da segunda.
 - Na situação apresentada, a tabela hash funciona como armazenamento de palavras e também a sua recorrência dentro dos arquivos de texto. Por possuir um tempo de acesso constante *(O(1))*, o extenso número de palavras dos textos não compromete a execução que pode ser feita em um tempo médio relativamente baixo, considerando a massa de dados.
 
+<figure align="center">
+    <img src="img/unordered.webp" alt="unordered_map">
+    <figcaption><h6>Exemplo de funcionamento da tabela HASH por trás de uma estrutura unordered_map.<h6></figcaption>
+</figure>
 
+Partindo para o funcionamento do programa, um *vector* armazena o nome dos arquivos de texto que serão lidos, e seu tamanho irá coordenar quantas vezes uma estrutura `for` irá repetir (cada repetição processa um arquivo de texto).
+Caso o arquivo de texto tenha sido aberto corretamente, o processamento do texto finalmente iniciará. Enquanto houverem linhas no arquivo de texto, os seguintes passos serão seguidos acompanhados das suas respectivas funções, linha por linha:
+- Todas as letras de todas as palavras serão transformadas em *minúsculas* utilizando o comando `tolower()`, além disso as letras acentuadas também serão transformadas em *minúsculas* (`converterAcentuadasParaMinusculas()`).
+- As possíveis reticências presentes na linha também serão retiradas (`tiraReticencia()`).
+- 
 
 ## Compilação e Execução
 Esse exemplo possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
