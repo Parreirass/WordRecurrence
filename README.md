@@ -1,8 +1,64 @@
 # WordRecurrence
 AEDS II | CEFET-MG
 
+<div style="display: inline-block;">    
+<img align="center" height="20px" width="60px" src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"/> 
+<img align="center" height="20px" width="80px" src="https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg"/> 
+</a> 
+</div>
+
+<p> </p>
+<p> </p>
+
 ## Proposta de Projeto
 Esse projeto tem como proposta a leitura de múltiplos arquivos de texto (`.txt`) e a análise da recorrência de palavras ao longo de todos os textos.
 Existem algumas regras para a análise textual ser feita corretamente:
 - É necessário usar uma estrutura `HASH` para o armazenamento das palavras.
+  - São consideradas palavras apenas aquelas que possuem todos os caracteres presentes na tabela `ASCII`.
+  - Sinais de pontuação são removidos antes da análise de palavras.
 - A recorrência deve ser feita utilizando uma estrutura `HEAP`.
+- As `N` palavras mais recorrentes devem ser exibidas no terminal ao fim da execução.
+- Existe um arquivo chamado `stopwords.csv` que contém palavras consideradas como *stopwords*, elas não devem ser consideradas como palavras à serem analisadas as recorrências. Caso fossem consideradas como palavras comuns, elas iriam ser as que mais apareceriam nos textos.
+
+|          Sinais de pontuação  | Stop words                                      |
+|-------------------------------|-------------------------------------------------|
+| `.`,   `!`,   `?`                   |   `artigos(a, o, as,os) ou conjunções(e, ou) `  |
+
+
+## Arquivos e funções
+O projeto é dividido entre três arquivos de códigos própriamente ditos: `leitura.hpp`, `leitura.cpp` e `main.cpp`.
+
+|  Arquivo                        |   Função                                                                                          |
+| ------------------------------- | ------------------------------------------------------------------------------------------------- |
+|  `main.c`                       | Arquivo principal para iniciar e chamar as funções do código                                                    |
+|  `leitura.hpp`                  | Define as funções e as estruturas que foram utilizadas no código |
+|  `leitura.cpp`                  | Contém o escopo de todas as funções que foram utilizadas |
+| `stopwords.csv` | arquivo que contem as stop words|
+| `arquivo_de_leitura.txt` | um dos arquivos de entrada principal no qual será feita toda a análise |
+
+> O arquivo `main.cpp` "chama" apenas uma função definida no `leitura.hpp` e processada no `leitura.cpp`, chamada `readPrincipal()`. Ela, por sua vez, organiza todo o processo e as demais funções presentes no projeto. 
+
+## Lógica Implementada
+
+
+## Compilação e Execução
+Esse exemplo possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
+
+| Comando                |  Função                                                                                           |
+| -----------------------| ------------------------------------------------------------------------------------------------- |
+|  `make clean`          | Apaga a última compilação realizada contida na pasta build                                        |
+|  `make`                | Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build           |
+|  `make run`            | Executa o programa da pasta build após a realização da compilação                                 |
+
+<p> </p>
+
+#### Felipe Parreiras
+<div style="display: inline-block;">
+<a href="https://t.me/fparreiras">
+<img align="center" height="20px" width="90px" src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/> 
+</a>
+
+<a href="https://www.linkedin.com/in/felipe-parreiras-56b075277/">
+<img align="center" height="20px" width="90px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
