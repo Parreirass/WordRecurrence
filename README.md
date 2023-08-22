@@ -30,7 +30,7 @@ O projeto é dividido entre três arquivos de códigos própriamente ditos: `lei
 
 |  Arquivo                        |   Função                                                                                          |
 | ------------------------------- | ------------------------------------------------------------------------------------------------- |
-|  `main.c`                       | Arquivo principal para iniciar e chamar as funções do código                                                    |
+|  `main.cpp`                       | Arquivo principal para iniciar e chamar as funções do código                                                    |
 |  `leitura.hpp`                  | Define as funções e as estruturas que foram utilizadas no código |
 |  `leitura.cpp`                  | Contém o escopo de todas as funções que foram utilizadas |
 | `stopwords.csv` | arquivo que contem as stop words|
@@ -39,6 +39,12 @@ O projeto é dividido entre três arquivos de códigos própriamente ditos: `lei
 > O arquivo `main.cpp` "chama" apenas uma função definida no `leitura.hpp` e processada no `leitura.cpp`, chamada `readPrincipal()`. Ela, por sua vez, organiza todo o processo e as demais funções presentes no projeto. 
 
 ## Lógica Implementada
+
+Como foi dito anteriormente, apenas a função `readPrincipal()` é "chamada" na *main.cpp*. Tal função começa inicializando as variáveis necessárias para o funcionamento do código. Além das variáveis consideradas "comuns", como as do tipo *int*, *bool* e *string*, uma struct chamada `palavra_q` armazena a quantidade de cada palavra nos arquivos de texto.
+Logo em seguida, uma estrutura é apresentada no código, chamada `unordered_map`, seu funcionamento de baseia em uma tabela HASH.
+- `unordered_map` é uma classe da biblioteca padrão do C++ que implementa uma estrutura de dados de tabela hash. Ela funciona como um armazenamento associativo e é utilizada para alocar pares chave-valor, onde cada chave é única e mapeia para um único valor. Essa estrutura se diferencia de um `map` na característica de que a primeira não ordena os elementos, diferentemente da segunda.
+- Na situação apresentada, a tabela hash funciona como armazenamento de palavras e também a sua recorrência dentro dos arquivos de texto. Por possuir um tempo de acesso constante *(O(1))*, o extenso número de palavras dos textos não compromete a execução que pode ser feita em um tempo médio relativamente baixo, considerando a massa de dados.
+
 
 
 ## Compilação e Execução
