@@ -54,7 +54,14 @@ Partindo para o funcionamento do programa, um *vector* armazena o nome dos arqui
 Caso o arquivo de texto tenha sido aberto corretamente, o processamento do texto finalmente iniciará. Enquanto houverem linhas no arquivo de texto, os seguintes passos serão seguidos acompanhados das suas respectivas funções, linha por linha:
 - Todas as letras de todas as palavras serão transformadas em *minúsculas* utilizando o comando `tolower()`, além disso as letras acentuadas também serão transformadas em *minúsculas* (`converterAcentuadasParaMinusculas()`).
 - As possíveis reticências presentes na linha também serão retiradas (`tiraReticencia()`).
-- 
+- Caso exista um número na linha, uma estrutura condicional *if*, juntamente com a função `temNumero()`, impede que esse número seja adicionado à tabela hash.
+- Existem também funções que verificam a presença de algum caractere que não seja uma letra na palavra (`Pontuacao()`, `removePontuacao()`). Caso essa verificação encontre algum caractere indesejado, eles são removidos.
+- Também é necessária a verificação da possibilidade da palavra a ser adicionada à tabela hash ser uma *stop word*, presente no arquivo *stopwords.csv*. Tal ferificação se dá utilizando uma estrutura chamada `.find()`. A função *.find()* em C++ é usada para buscar a primeira ocorrência de um valor ou substring em uma string ou sequência de caracteres. Caso seja uma stop word, essa palavra não é adicionada à tabela hash.
+- Uma última verificação é feita antes da adição à tabela hash. Ela serve para excluir caracteres fora da tabela *ASCII*. Caracteres que não estão presentes nessa tabela não são trabalhados de maneira correta pelo C++, então palavras com tais caracteres não são adicionadas à tabela.
+- Por fim, caso todas as condições acima tenham sido ultrapassadas, a palavra pode ser adicionada à tabela hash através da função `inserePrintGeral()`.
+  - A função acima verifica se a palavra a ser adicionada já existe na tabela, caso ela já existir, é incrementada sua quantidade.
+
+Após a leitura e processamento de dados de todos os arquivos de texto, é acionada a última função, chamada `calcula_heap()`.
 
 ## Compilação e Execução
 Esse exemplo possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
