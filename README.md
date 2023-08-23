@@ -68,8 +68,24 @@ A estrutura `HEAP` (função *calcula_a_heap()*) funciona da seguinte forma:
 - É percorrida todas as posições presentes no *unordered_map*, cada posição sofre a verificação em relação à quantidade.
 - Os *K* primeiros elementos são inseridos na heap e, posteriormente, a estrutura chamada `binary min_heap` é feita.
   - Uma min heap (ou min-heap) é uma estrutura de dados de árvore binária completa que possui a propriedade de que o valor de cada nó é menor ou igual aos valores de seus filhos. Em outras palavras, o nó pai é sempre menor ou igual aos seus nós filhos.
+<figure align="center">
+    <img src="img/min_heap.png" alt="min_heap">
+    <figcaption><h6>Exemplo de apresentação de uma árvore binária "min_heap"<h6></figcaption>
+</figure>
+      
 - A partir da posição *K+1*, a quantidade armazenada na posição da *hash* é comparada com a quantidade armazenada no elemento de primeiro nível na *heap*. Caso a nova quantidade seja maior, é feita a troca e a estrutura *min_heap* é novamente acionada para colocar o menor elemento presente no primeiro nível da árvore.
-- Assim, ao final da verificação por toda a *hash*, os *K* elementos presentes na árvore binária *min_heap* serão as palavras mais recorrentes nos dois textos.
+
+Assim, ao final da verificação por toda a *hash*, os *K* elementos presentes na árvore binária *min_heap* serão as palavras mais recorrentes nos dois textos.
+
+# Testes Realizados
+- Os testes que serão apresentados abaixo foram feitos em um Notebook Acer Nitro 5 (intel i5 10300H - gtx 1650 - 8gb ram).
+
+|  Arquivos                       |   Quantidade Individual de Palavras | Quantidade total de palavras em todos os textos |
+| ------------------------------- | ------------------------------ | ---------------------- |
+|  `DomCasmurro.txt`                       | 9152 | 28047 |
+| `Semana_Machado_Assis.txt` | 25021 | --------------- |
+
+> Os testes foram feitos utilizando um *K* igual á 20. Definido por `#define K 20`
 
 ## Compilação e Execução
 Esse exemplo possui um arquivo Makefile que realiza todo o procedimento de compilação e execução. Para tanto, temos as seguintes diretrizes de execução:
