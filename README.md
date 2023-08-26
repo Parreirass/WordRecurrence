@@ -43,6 +43,17 @@ O projeto é dividido entre três arquivos de códigos própriamente ditos: `lei
 Como foi dito anteriormente, apenas a função `readPrincipal()` é "chamada" na *main.cpp*. Tal função começa inicializando as variáveis necessárias para o funcionamento do código. Além das variáveis consideradas "comuns", como as do tipo *int*, *bool* e *string*, uma struct chamada `palavra_q` armazena a quantidade de cada palavra nos arquivos de texto.
 Logo em seguida, uma estrutura é apresentada no código, chamada `unordered_map`, seu funcionamento de baseia em uma tabela HASH.
 - `unordered_map` é uma classe da biblioteca padrão do C++ que implementa uma estrutura de dados de tabela hash. Ela funciona como um armazenamento associativo e é utilizada para alocar pares chave-valor, onde cada chave é única e mapeia para um único valor. Essa estrutura se diferencia de um `map` na característica de que a primeira não ordena os elementos, diferentemente da segunda.
+
+<div align="center">
+    <img src="img/hash2.jpeg" alt="hash1">
+</div>
+<div align="center">
+    <img src="img/hash1.jpeg" alt="hash2">
+    <figcaption><h6>Código da função hash implementada no `unordered_map` pelo compilador `g++`<h6></figcaption>
+</div>
+
+> O código acima é a base hash da função `unordered_map`, executada no compilador g++, utilizada para armazenar as palavras dos textos de forma rápida e sem repetições.
+  
 - Na situação apresentada, a tabela hash funciona como armazenamento de palavras e também a sua recorrência dentro dos arquivos de texto. Por possuir um tempo de acesso constante *(O(1))*, o extenso número de palavras dos textos não compromete a execução que pode ser feita em um tempo médio relativamente baixo, considerando a massa de dados.
 
 <div align="center">
