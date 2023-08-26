@@ -75,6 +75,13 @@ A estrutura `HEAP` (função *calcula_a_heap()*) funciona da seguinte forma:
       
 - A partir da posição *K+1*, a quantidade armazenada na posição da *hash* é comparada com a quantidade armazenada no elemento de primeiro nível na *heap*. Caso a nova quantidade seja maior, é feita a troca e a estrutura *min_heap* é novamente acionada para colocar o menor elemento presente no primeiro nível da árvore.
 
+<div align="center">
+    <img src="img/faz_a_heap.jpeg" alt="func_heap">
+    <figcaption><h6>Função de heap implementada no algorítmo<h6></figcaption>
+</div>
+
+> Essa função analisa cada posição e separa cada valor de forma que o pai sempre seja menor que o filho, assim o menor valor do "vetor final" sempre será localizado no primeiro nível da árvore (heap).
+
 Assim, ao final da verificação por toda a *hash*, os *K* elementos presentes na árvore binária *min_heap* serão as palavras mais recorrentes nos dois textos.
 
 ## Testes Realizados
